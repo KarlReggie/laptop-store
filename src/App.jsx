@@ -313,6 +313,8 @@ function App() {
       const { data, error } = await supabase
         .from("laptops")
         .select("*")
+        // Only published listings are shown to buyers (hides Draft and Sold)
+        .eq("listing_status", "Posted")
         .order("created_at", { ascending: false });
 
       if (cancelled) return;
