@@ -27,6 +27,7 @@ import {
 import "./index.css";
 import { supabase } from "./supabaseClient";
 import ContactPage, { PageLoader } from "./ContactPage.jsx";
+import HeroLaptop from "./HeroLaptop.jsx";
 
 // Temporary listing link used for every laptop for now.
 // Later, each laptop will get its own Facebook post link.
@@ -624,22 +625,9 @@ function App() {
             </div>
 
             <div className="hero-visual">
-              <div className="hero-image-wrap">
-                <img
-                  src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=1200"
-                  alt="Laptop product showcase"
-                />
-              </div>
-              <div className="hero-floating-card">
-                <div className="floating-icon">
-                  <Laptop size={20} />
-                </div>
-                <div>
-                  <strong>Find your match</strong>
-                  <small>Browse available laptops</small>
-                </div>
-                <ArrowUpRight size={19} />
-              </div>
+              <HeroLaptop
+                items={products.filter((p) => p.featured && p.images)}
+              />
               <div className="hero-decoration"></div>
             </div>
           </div>
