@@ -1097,6 +1097,17 @@ function App() {
                   </div>
                 </div>
 
+                {selectedProduct.facebook && (
+                  <a
+                    href={selectedProduct.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="facebook-btn"
+                  >
+                    View seller listing <ArrowUpRight size={17} />
+                  </a>
+                )}
+
                 {selectedProduct.status === "Available" ? (
                   <a
                     href={buildMessengerUrl(
@@ -1105,12 +1116,12 @@ function App() {
                     )}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="facebook-btn"
+                    className="message-btn"
                     onClick={() =>
                       copyMessage(buildProductMessage(selectedProduct))
                     }
                   >
-                    View seller listing <MessageCircle size={17} />
+                    Message seller <MessageCircle size={17} />
                   </a>
                 ) : (
                   <button className="reserved-btn" disabled>
@@ -1119,10 +1130,10 @@ function App() {
                 )}
 
                 <p className="modal-note">
-                  Clicking the button opens Messenger with the seller.
-                  If the message box is empty, paste the copied inquiry
-                  (it includes this laptop's listing link) and send it,
-                  so the seller knows what you're asking about. Product
+                  "View seller listing" opens the seller's original
+                  Facebook post for this laptop. "Message seller" opens
+                  Messenger with a ready-made inquiry. If the message box
+                  is empty, paste the copied inquiry and send it. Product
                   details and availability are provided by the seller.
                   Please confirm availability and condition directly
                   with the seller before purchase.

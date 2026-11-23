@@ -215,13 +215,13 @@ img {
 }
 
 .hero-inner {
-  min-height: 450px;
+  min-height: 490px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 50px;
-  padding-top: 55px;
-  padding-bottom: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   position: relative;
   z-index: 1;
 }
@@ -1255,6 +1255,33 @@ img {
   transition: .2s ease;
 }
 
+.message-btn {
+  width: 100%;
+  min-height: 47px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--blue);
+  border: 1.5px solid var(--blue);
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 800;
+  transition: .2s ease;
+}
+
+.message-btn:hover {
+  background: var(--blue);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.facebook-btn + .reserved-btn {
+  margin-top: 10px;
+}
+
 .reserved-btn {
   background: #fff3df;
   color: #98651b;
@@ -2013,7 +2040,7 @@ img {
   height: 0;
   transform-style: preserve-3d;
   --laptop-scale: 1.22;
-  transform: translateY(80px) scale(var(--laptop-scale, 1));
+  transform: translateY(90px) scale(var(--laptop-scale, 1));
 }
 
 .laptop {
@@ -2430,3 +2457,6 @@ img {
     animation: none;
   }
 }
+
+[data-theme="dark"] .message-btn { color: #7db0ff; border-color: #7db0ff; }
+[data-theme="dark"] .message-btn:hover { background: #2563eb; border-color: #2563eb; color: #fff; }
